@@ -4,16 +4,64 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    private Spinner unittypeSpinner;
+    private EditText amountofEdittext;
+
+    TextView teaspoonTextView, tablespoonTextView, cupTextView, ounceTextView,
+            pintTextView, quartTextView, gallonTextView, poundTextView,
+            milliliterTextView, literTextView, milligramTextView, kilogramTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        amountofEdittext=(EditText)findViewById(R.id.conver_editText);
+
+
+        //Fills the spinner with the unit options
+        addItemsToUnitTypeSpinner();
+
+         // Add listener to the Spinner
+         addListenerToUnitTypeSpinner();
+
+
     }
 
+    private void addItemsToUnitTypeSpinner() {
+
+    }
+
+    private void addListenerToUnitTypeSpinner(){
+
+    }
+
+
+    public void initializeTextViews() {
+
+        teaspoonTextView = (TextView) findViewById(R.id.tsp_text_view);
+        tablespoonTextView = (TextView) findViewById(R.id.tbs_text_view);
+        cupTextView = (TextView) findViewById(R.id.cup_text_view);
+        ounceTextView = (TextView) findViewById(R.id.oz_text_view);
+        pintTextView = (TextView) findViewById(R.id.pint_text_view);
+        quartTextView = (TextView) findViewById(R.id.quart_text_view);
+        gallonTextView = (TextView) findViewById(R.id.gallon_text_view);
+        poundTextView = (TextView) findViewById(R.id.pound_text_view);
+        milliliterTextView = (TextView) findViewById(R.id.ml_text_view);
+        literTextView = (TextView) findViewById(R.id.liter_text_view);
+        milligramTextView = (TextView) findViewById(R.id.mg_text_view);
+        kilogramTextView = (TextView) findViewById(R.id.kg_text_view);
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
