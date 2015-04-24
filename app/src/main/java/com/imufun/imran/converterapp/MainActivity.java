@@ -58,10 +58,9 @@ public class MainActivity extends ActionBarActivity {
 
         unittypeSpinner = (Spinner) findViewById(R.id.Unit_type_spinner);
 
-        unittypeSpinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        unittypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int pos, long l) {
-
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long l) {
                 // Get the item selected in the Spinner
                 String itemSelectedInSpinner = parent.getItemAtPosition(pos).toString();
 
@@ -69,10 +68,12 @@ public class MainActivity extends ActionBarActivity {
                 // conversion algorithm
                 checkIfConvertingFromTsp(itemSelectedInSpinner);
             }
-                public void onNothingSelected (AdapterView < ? > arg0)
-                {
-                    // TODO maybe add something here later
-                }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+
 
         });
 
@@ -84,7 +85,7 @@ public class MainActivity extends ActionBarActivity {
         teaspoonTextView = (TextView) findViewById(R.id.tsp_text_view);
         tablespoonTextView = (TextView) findViewById(R.id.tbs_text_view);
         cupTextView = (TextView) findViewById(R.id.cup_text_view);
-        ounceTextView = (TextView) findViewById(R.id.oz_text_view);
+        ounceTextView =(TextView) findViewById(R.id.oz_text_view);
         pintTextView = (TextView) findViewById(R.id.pint_text_view);
         quartTextView = (TextView) findViewById(R.id.quart_text_view);
         gallonTextView = (TextView) findViewById(R.id.gallon_text_view);
